@@ -25,12 +25,12 @@ An interactive Streamlit dashboard for analyzing retail sales data and generatin
 ---
 
 ## 📂 Project Structure
-dashboard/
-app.py
-data/
-processed/
-notebooks/
-README.md
+- dashboard/
+- app.py
+- data/
+- processed/
+- notebooks/
+- README.md
 
 ---
 
