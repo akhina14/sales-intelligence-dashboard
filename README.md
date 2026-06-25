@@ -1,21 +1,18 @@
 
-# 📊 AI Sales Intelligence Dashboard
-
-An interactive Streamlit dashboard for analyzing retail sales data and generating business insights.
+# AI Sales Intelligence Dashboard
 
 ---
 
-## 🚀 Features
+## Overview
 
-- KPI overview (Sales, Profit, Orders)
-- Sales trend analysis
-- Category and region performance
-- Profit analysis
-- Interactive filters (Region & Category)
+This project is an interactive Sales Intelligence Dashboard built using Streamlit.
+It focuses on analyzing sales performance, identifying anomalies, forecasting revenue, and generating actionable business insights through interactive visual analytics.
+
+The dashboard transforms raw sales data into meaningful KPIs, trends, and decision-support insights for business stakeholders.
 
 ---
 
-## 🛠️ Tech Stack
+## Tools used
 
 - Python
 - Pandas
@@ -24,26 +21,45 @@ An interactive Streamlit dashboard for analyzing retail sales data and generatin
 
 ---
 
-## 📂 Project Structure
-- dashboard/
-- app.py
-- data/
-- processed/
-- notebooks/
-- README.md
+## Project Workflow
+Project Workflow
+- Data Loading
+Loaded sales, product, and forecast datasets using Pandas.
+
+- Data Cleaning
+Handled missing values, removed irrelevant columns, and standardized data formats (especially date fields).
+
+- Feature Engineering
+Created key features such as Profit Margin, Discount Impact, Sales Outliers, and time-based attributes.
+
+- Exploratory Data Analysis (EDA)
+Analyzed sales, profit, region, and category performance using interactive visualizations built with Plotly.
+
+- Forecasting & Trend Analysis
+Aggregated time-series sales data to compare actual vs forecasted revenue trends.
+
+- Anomaly Detection
+Identified unusual sales patterns using statistical methods (Z-score) and flagged high-impact transactions.
+
+- Insight Generation
+Built an automated system to extract key business insights and performance summaries.
+
+- Dashboard Development
+Developed an interactive multi-tab dashboard using Streamlit with filters, KPIs, and visual analytics.
 
 ---
 
-## ▶️ How to Run
+## Business Impact
 
-```bash
-pip install -r requirements.txt
-streamlit run dashboard/app.py
-
-📊 Dataset
+- Helps identify profitable and non-profitable segments
+- Detects sales anomalies and unusual patterns
+- Supports pricing and discount strategy optimization
+- Improves forecasting and decision-making
+---
+## Dataset
 
 Uses the Sample Superstore dataset for analysis.
-
-👤 Author
+---
+## Author
 
 Akhina Manual

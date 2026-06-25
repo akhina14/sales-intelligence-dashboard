@@ -96,7 +96,7 @@ with tab1:
     st.markdown("## 📊 Executive Overview")
     forecast_total = forecast_df["Forecast Sales"].sum()
 
-    # ---------------- KPI ROW----------------
+   
     c1, c2, c3 = st.columns(3)
 
     c1.metric("💰 Revenue", f"${total_sales:,.0f}")
@@ -106,22 +106,22 @@ with tab1:
 
     left, right = st.columns([2, 1])
 
-    # ================= LEFT SIDE =================
+    #  LEFT SIDE 
     with left:
-         # ------------ COMBINED OPERATIONS BOX --------
+         #  COMBINED OPERATIONS BOX 
             
         st.markdown("### 📦 Operations Overview")
         st.success(f"🎯 Average Discount: {avg_discount:.1%}")
         st.info(f"🧾 Unique Products: {filtered_df['Product Name'].nunique()}")
         st.warning(f"🚀 Average Profit Margin: {avg_margin:.1%}")
   
-         # ---------------- TOP DRIVERS ----------------
+         # TOP DRIVERS 
         st.markdown("### 🏆 Top Revenue Drivers")
         top_cat = (filtered_df.groupby("Category")["Sales"].sum().sort_values(ascending=False).head(3))
         for i, (cat, val) in enumerate(top_cat.items(), 1):
             st.write(f"**{i}. {cat}** → ${val:,.0f}")
 
-    # ================= RIGHT SIDE =================
+    #  RIGHT SIDE 
     with right:
         st.markdown("### 🧠 Business Health")
         profit_margin = filtered_df["Profit Margin"].mean()
@@ -260,9 +260,9 @@ with tab4:
 
     st.header("⚠ Anomaly Detection")
 
-    # =========================
+   
     # Monthly Sales Anomalies
-    # =========================
+    
 
     st.subheader("📈 Monthly Sales Anomalies")
 
@@ -290,17 +290,17 @@ with tab4:
             st.info(item["message"])
     st.divider()
 
-    # =========================
+  
 # Order-Level Outliers
-# =========================
+
 
     st.subheader("🚨 High-Impact Transactions")
 
     order_outliers = filtered_df[filtered_df["Sales_Outlier"] == 1]
 
-# -------------------------
+
 # KPI Summary Row
-# -------------------------
+
     c1, c2, c3 = st.columns(3)
 
     with c1:
@@ -313,9 +313,9 @@ with tab4:
         avg_sales = order_outliers["Sales"].mean() if not order_outliers.empty else 0
         st.metric("Avg Order Value",f"${avg_sales:,.0f}")
 
-# -------------------------
+
 # Insight Box
-# -------------------------
+
     st.info(
         f"""
     📊 **Insight**
@@ -330,9 +330,9 @@ with tab4:
     - Heavy discount-driven sales
     """)
 
-# -------------------------
+
 # Table Section
-# -------------------------
+
     if order_outliers.empty:
 
         st.success("No high-impact transactions detected 🎯")
@@ -348,9 +348,8 @@ with tab5:
 
     st.header("📊 Profitability Analysis")
 
-    # =========================
     # KPI Section
-    # =========================
+   
 
     avg_margin = filtered_df["Profit Margin"].mean()
     total_profit = filtered_df["Profit"].sum()
@@ -386,9 +385,9 @@ with tab5:
 
     st.plotly_chart(fig_scatter,use_container_width=True)
 
-    # =========================
+  
     # Insights Section
-    # =========================
+   
 
     st.divider()
 
