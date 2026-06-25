@@ -380,12 +380,6 @@ with tab5:
 
     st.divider()
 
-    # =========================
-    # Row 2
-    # =========================
-
-    
-
     fig_scatter = px.scatter(filtered_df,x="Discount",y="Profit",color="Category",
         hover_data=["Product Name","Sales"],
         title="Discount vs Profit")
@@ -478,7 +472,7 @@ with tab6:
 
     st.markdown("### Automated Insights")
 
-    # CLEAN STRING-BASED INSIGHTS (NO ERRORS)
+    
     for ins in insights:
         st.markdown(
             f"""
