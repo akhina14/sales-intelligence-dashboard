@@ -4,6 +4,8 @@ import numpy as np
 import plotly.express as px
 import os
 
+api_key = st.secrets["GROQ_API_KEY"]
+
 st.markdown("""
 <style>
 .stApp {background-color: #F8FAFC;}
