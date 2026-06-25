@@ -46,13 +46,18 @@ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "💡 Business Insights"])
 
 # Load data
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-file_path = os.path.join(BASE_DIR, "data", "processed", "superstore_features.csv")
-df = pd.read_csv(file_path, encoding="latin1")
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+data_path = os.path.join(BASE_DIR, "data", "processed", "superstore_features.csv")
+forecast_path = os.path.join(BASE_DIR, "data", "processed", "sales_forecast.csv")
+
+df = pd.read_csv(data_path, encoding="latin1")
+forecast_df = pd.read_csv(forecast_path, encoding="latin1")
+
 df["Order Date"] = pd.to_datetime(df["Order Date"])
 df["Ship Date"] = pd.to_datetime(df["Ship Date"])
-forecast_df = pd.read_csv(os.path.join(BASE_DIR, "data", "processed", "sales_forecast.csv"))
 forecast_df["Date"] = pd.to_datetime(forecast_df["Date"])
+
 filtered_df = df.copy()
 
 
