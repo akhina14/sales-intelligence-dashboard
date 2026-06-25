@@ -56,9 +56,11 @@ Developed an interactive multi-tab dashboard using Streamlit with filters, KPIs,
 - Supports pricing and discount strategy optimization
 - Improves forecasting and decision-making
 ---
+
 ## Dataset
 
 Uses the Sample Superstore dataset for analysis.
+
 ---
 ## Author
 
